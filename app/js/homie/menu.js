@@ -9,7 +9,7 @@ export default class Menu extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      active: { id: 'all', name: 'Tout' }
+      active: { id: 'all', name: 'All' }
     };
   }
 
@@ -28,7 +28,7 @@ export default class Menu extends React.Component {
 
   render () {
     let groupsWithAll = this.props.groups.slice(0); // needed to clone, else it modifies original props
-    groupsWithAll.unshift({ id: 'all', 'name': 'Tout' });
+    groupsWithAll.unshift({ id: 'all', 'name': 'All' });
 
     let groups = groupsWithAll.map((group, index) => {
       let itemClasses = classNames({
@@ -49,9 +49,9 @@ export default class Menu extends React.Component {
         <i className='notched circle loading icon'></i>
         <div className='content'>
           <div className='header'>
-            Connexion instable
+            Connection instable
           </div>
-          <p>Les données ci-dessous ne sont peut-être plus à jour. Nous tentons de rétablir la situation.</p>
+          <p>The information below may be outdated. We are trying to restore the situation.</p>
         </div>
       </div>;
     }
@@ -86,7 +86,7 @@ export default class Menu extends React.Component {
 
               <div className='right menu'>
                 <div className='item'>
-                  Serveur
+                  Server
                   <span className={connIndicatorClasses}></span>
                 </div>
 
@@ -99,7 +99,7 @@ export default class Menu extends React.Component {
           </div>
         </div>
         {errorMessage}
-        Groupe&nbsp;&nbsp;
+        Group&nbsp;&nbsp;
         <div className='ui dropdown floating labeled icon button'>
           {this.state.active.name} <i className='filter icon'></i>
           <div className='menu'>

@@ -49,7 +49,7 @@ class App extends React.Component {
     return (
       <div>
         <div className={ dimmerClasses } id='loading'>
-          <div className='ui text loader'>Chargement</div>
+          <div className='ui text loader'>Loading</div>
         </div>
 
         <div className='ui main container'>

@@ -13,28 +13,28 @@ export default class Condition extends React.Component {
     let conditionText;
     switch (this.props.state.current.condition) {
       case 'clear-day':
-        conditionText = 'Jour clair';
+        conditionText = 'Clear day';
         break;
       case 'clear-night':
-        conditionText = 'Nuit claire';
+        conditionText = 'Clear Night';
         break;
       case 'rain':
-        conditionText = 'Pluvieux';
+        conditionText = 'Rainy';
         break;
       case 'snow':
-        conditionText = 'Neigeux';
+        conditionText = 'Snowy';
         break;
       case 'sleet':
-        conditionText = 'Neige fondue';
+        conditionText = 'Melted snow';
         break;
       case 'wind':
-        conditionText = 'Venteux';
+        conditionText = 'Windy';
         break;
       case 'fog':
-        conditionText = 'Brouillard';
+        conditionText = 'Foggy';
         break;
       case 'cloudy':
-        conditionText = 'Nuageux';
+        conditionText = 'Cloudy';
         break;
       case 'partly-cloudy-day':
         conditionText = 'Jour partiellement nuageux';
