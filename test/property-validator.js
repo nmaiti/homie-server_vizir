@@ -11,6 +11,10 @@ test('PropertyValidator.canReceive', function (t) {
   t.equal(validator.canReceive('light', 'on', 'true'), true, 'pass if true given');
   t.equal(validator.canReceive('light', 'on', 'false'), true, 'pass if false given');
 
+  t.equal(validator.canReceive('pir', ' on', '42'), false, 'fail if not boolean given');
+  t.equal(validator.canReceive('pir', ' on', 'true'), true, 'pass if true given');
+  t.equal(validator.canReceive('pir', ' on', 'false'), true, 'pass if false given');
+
   t.equal(validator.canReceive('temperature', 'temperature', '22'), true, 'pass if integer given');
   t.equal(validator.canReceive('temperature', 'temperature', '22.6'), true, 'pass if float given');
   t.equal(validator.canReceive('temperature', 'temperature', 'notafloat'), false, 'fail if string given');
@@ -31,6 +35,7 @@ test('PropertyValidator.canSend', function (t) {
   t.equal(validator.canSend('temperature', 'temperature', '12'), false, 'fail when trying to send a non-settable property');
 
   t.equal(validator.canSend('light', 'on', 'true'), true, 'pass when trying to set a settabke property');
+  t.equal(validator.canSend('pir', 'on', 'true'), false, 'fail when trying to set a settabke property');
 
   t.end();
 });
@@ -43,6 +48,9 @@ test('PropertyValidator.convertValue', function (t) {
 
   t.deepEqual(validator.convertValue('light', 'on', 'true'), true, 'return true on boolean');
   t.deepEqual(validator.convertValue('light', 'on', 'false'), false, 'return false on boolean');
+
+  t.deepEqual(validator.convertValue('pir', 'on', 'true'), true, 'return true on boolean');
+  t.deepEqual(validator.convertValue('pir', 'on', 'false'), false, 'return false on boolean');
 
   // test float
   t.deepEqual(validator.convertValue('temperature', 'temperature', '22'), 22.0, 'return float on integer');

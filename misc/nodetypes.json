@@ -25,6 +25,11 @@
         "level": { "type": "percentage", "settable": true }
       }
     },
+    "pir": {
+      "properties": {
+        "on": { "type": "boolean", "settable": false }
+      }
+    },
     "switch": {
       "properties": {
         "on": { "type": "boolean", "settable": true }

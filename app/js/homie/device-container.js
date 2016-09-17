@@ -7,9 +7,11 @@ import Temperature from './devices/temperature';
 import Shutters from './devices/shutters';
 import Condition from './devices/condition';
 import Heater from './devices/heater';
+import Pir from './devices/pir';
 
 let Nodes = {
   'light': Light,
+  'pir': Pir,
   'temperature': Temperature,
   'shutters': Shutters,
   'condition': Condition,
