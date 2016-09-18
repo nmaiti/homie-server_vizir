@@ -30,7 +30,12 @@
         "on": { "type": "boolean", "settable": false }
       }
     },
-    "switch": {
+    "camc": {
+      "properties": {
+        "on": { "type": "boolean", "settable": false }
+      }
+    },
+	"switch": {
       "properties": {
         "on": { "type": "boolean", "settable": true }
       }

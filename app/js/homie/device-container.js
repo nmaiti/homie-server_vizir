@@ -8,11 +8,13 @@ import Shutters from './devices/shutters';
 import Condition from './devices/condition';
 import Heater from './devices/heater';
 import Pir from './devices/pir';
+import Camc from './devices/camc';
 
 let Nodes = {
   'light': Light,
   'pir': Pir,
   'temperature': Temperature,
+  'camc': Camc,
   'shutters': Shutters,
   'condition': Condition,
   'heater': Heater
