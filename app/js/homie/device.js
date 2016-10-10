@@ -46,6 +46,7 @@ export default class Device extends React.Component {
       'label': true
     });
 
+    console.log('NBM_K1_here');
     let tooltipHtml = `
       <b>Nom objet : </b> ${this.props.deviceState.name ? this.props.deviceState.name : 'inconnu'}<br>
       <b>ID objet : </b> ${this.props.deviceId}<br>
@@ -72,6 +73,7 @@ export default class Device extends React.Component {
             })()}
             {
             }
+
             <a className={signalLabelClasses} data-html={tooltipHtml} data-variation='inverted' data-position='left center'><i className='wifi icon'/></a>
             <div className='meta'>
               <i className='marker icon'></i><span className='group'>{ this.props.location }</span>

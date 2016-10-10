@@ -4,6 +4,7 @@ import React from 'react';
 
 import Device from '../device';
 
+
 export default class Shutters extends React.Component {
   constructor (props) {
     super(props);
@@ -12,6 +13,7 @@ export default class Shutters extends React.Component {
   open () {
       var val = parseInt(this.props.state.current.level)+10;
 	  	val = val <= 100 ? val : val - 10;
+       console.log("NBM_N3b_here");
 	  this.refs['device'].setProperty('level', val);
   }
 
@@ -22,10 +24,12 @@ export default class Shutters extends React.Component {
   close () {
       var val = parseInt(this.props.state.current.level)-10;
 	  	val = val  >= 0 ? val : val+10;
+       console.log("NBM_N3b_here");
 	  this.refs['device'].setProperty('level', val);
   }
 
   render () {
+    console.log("NBM_N2_here");
     return (
       <Device image={typeof this.props.state.current.level === 'undefined' ? undefined : this.props.state.current.level === 100 ? 100 : this.props.state.current.level >= 90 ? 90 : this.props.state.current.level >= 80 ? 80 : this.props.state.current.level >= 70 ? 70 : this.props.state.current.level >= 60 ? 60 : this.props.state.current.level >= 50 ? 50 : this.props.state.current.level >= 40 ? 40 : this.props.state.current.level >= 30 ? 30 : this.props.state.current.level >= 20 ? 20 : this.props.state.current.level >= 10 ? 10 : 0} color='#f1c40f' ref='device' {...this.props}>
         <div className='ui three buttons'>

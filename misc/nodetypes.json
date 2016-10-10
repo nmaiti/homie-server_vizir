@@ -35,11 +35,17 @@
         "on": { "type": "boolean", "settable": false }
       }
     },
+	"sttnode": {
+      "properties": {
+        "out": { "type": "string", "settable": true }
+      }
+    },
 	"switch": {
       "properties": {
         "on": { "type": "boolean", "settable": true }
       }
     },
+
     "light": {
       "alias": "switch"
     }
