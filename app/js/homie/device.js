@@ -14,6 +14,7 @@ export default class Device extends React.Component {
   }
 
   setProperty (name, value) {
+    console.log(`NBM_S1 `);
     this.props.setProperty({
       deviceId: this.props.deviceId,
       nodeId: this.props.nodeId,
@@ -23,6 +24,7 @@ export default class Device extends React.Component {
   }
 
   setProperty2 (devId,ndeId,name, value) {
+    console.log(`NBM_S2 `);
     this.props.setProperty({
       deviceId: devId,
       nodeId: ndeId,
@@ -123,5 +125,6 @@ Device.propTypes = {
     localip: React.PropTypes.string,
     version: React.PropTypes.version
   }).isRequired,
-  setProperty: React.PropTypes.func.isRequired
+  setProperty: React.PropTypes.func.isRequired,
+  setProperty2: React.PropTypes.func.isRequired
 };
