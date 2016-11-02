@@ -22,6 +22,15 @@ export default class Device extends React.Component {
     });
   }
 
+  setProperty2 (devId,ndeId,name, value) {
+    this.props.setProperty({
+      deviceId: devId,
+      nodeId: ndeId,
+      property: name,
+      value: value
+    });
+  }
+
   componentDidMount () {
     $('.device-status').popup();
   }
