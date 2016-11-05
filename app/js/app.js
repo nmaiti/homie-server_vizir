@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
 import { Provider, connect } from 'react-redux';
-import store, {setProperty} from './store';
+import store, {setPropertyS} from './store';
 
 import Menu from './homie/menu';
 import DeviceContainer from './homie/device-container';
@@ -17,7 +17,7 @@ import DeviceContainer from './homie/device-container';
   connection: state.connection,
   mqttStatus: state.mqttStatus
 }), (dispatch) => ({
-  setProperty: (property) => dispatch(setProperty(property))
+  setProperty: (property) => dispatch(setPropertyS(property))
 }))
 class App extends React.Component {
   constructor (props) {

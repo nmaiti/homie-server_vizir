@@ -88,7 +88,7 @@ socket.on('mqttClientStatus', (connected) => {
 
 export default store;
 
-export function setProperty (property) {
+export function setPropertyS (property) {
   return {
     type: SET_PROPERTY,
     property: property
