@@ -37,7 +37,7 @@ function infrastructure (state = immutableState.toJS(), action) {
       return immutableState.toJS();
     case SET_PROPERTY:
 	  console.log(`NBM_L1 `);
-      socket.emit('setProperty', action.property);
+      socket.emit('setPropertyE', action.property);
       return immutableState.toJS();
     case MQTT_STATUS:
       immutableState = immutableState.set('mqttStatus', action.connected);
