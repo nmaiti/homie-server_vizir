@@ -72,7 +72,7 @@ export default class Device extends React.Component {
       <div className='ui column'>
         <div className='ui fluid card' style={{overflow: 'hidden'}}>
           <div className='image'>
-            <img src={typeof this.props.image !== 'undefined' ? `img/icons/${this.props.type}/${this.props.image}.png` : 'img/icons/common/unknown.png'} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '20px'}}/>
+		  <MyImage img1={this.props.image} type1= {this.props.type} nodeColor={this.props.nodeColor} deviceColor={this.props.deviceColor} groupColor={this.props.groupColor} color={this.props.color} />
           </div>
 
           <div className='content'>
@@ -98,6 +98,26 @@ export default class Device extends React.Component {
     );
   }
 }
+
+var MyImage = React.createClass({
+	  render: function() {
+				var imageload = '';
+				if (typeof this.props.img1 !== 'undefined') {
+					if (this.props.img1 !== 'none') {
+					  imageload = (
+						  <img src={`img/icons/${this.props.type1}/${this.props.img1}.png`} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '20px'}}/>
+					  );
+					}
+				} else {
+					  imageload = (
+						<img src={'img/icons/common/unknown.png'} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '20px'}}/>
+					  );
+				}
+		      return (
+				  imageload
+				  );
+		}
+});
 
 Device.propTypes = {
   type: React.PropTypes.string.isRequired,
