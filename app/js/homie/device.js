@@ -106,14 +106,16 @@ var MyImage = React.createClass({
 					if (this.props.img1 !== 'none') {
 						var filename =  "";
 						if (/[.]/.exec(this.props.img1)) {
-							filename = `${this.props.img1}`;
+							console.log("Here I am");
+						imageload = (
+						  <img src={`${this.props.img1}`} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '20x'}}/>
+					  );
 						} else {
 							filename = `${this.props.img1}.png` ;
-						}
-
 						imageload = (
-						  <img src={`img/icons/${this.props.type1}/${filename}`} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '20px'}}/>
+						  <img src={`img/icons/${this.props.type1}/${filename}`} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '21px'}}/>
 					  );
+						}
 					}
 				} else {
 					  imageload = (
