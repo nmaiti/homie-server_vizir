@@ -113,7 +113,7 @@ var MyImage = React.createClass({
 						} else {
 							filename = `${this.props.img1}.png` ;
 						imageload = (
-						  <img src={`img/icons/${this.props.type1}/${filename}`} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '21px'}}/>
+						  <img src={`img/icons/${this.props.type1}/${filename}`} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '20px'}}/>
 					  );
 						}
 					}

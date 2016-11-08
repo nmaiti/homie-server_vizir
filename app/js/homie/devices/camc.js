@@ -12,7 +12,7 @@ export default class Camc extends React.Component {
   render () {
     return (
    
-      <Device image={"http://12.154.129.248/mjpg/video.mjpg"} color='#ea6153' ref='device' {...this.props}>
+      <Device image={"http://192.168.1.100:8080/./?action=stream"} color='#ea6153' ref='device' {...this.props}>
          <br/>
          <br/>
 	    <div className='ui two buttons'>
