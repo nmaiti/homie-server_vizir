@@ -10,7 +10,7 @@ export default class Heater extends React.Component {
   }
 
   toggle (value) {
-    this.refs['device'].setProperty('mode', value);
+    this.refs['device'].setPropertyD('mode', value);
   }
 
   render () {

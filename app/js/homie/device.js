@@ -13,7 +13,7 @@ export default class Device extends React.Component {
     super(props);
   }
 
-  setProperty (name, value) {
+  setPropertyD (name, value) {
     console.log(`NBM_S1 `);
     this.props.setProperty({
       deviceId: this.props.deviceId,
@@ -23,7 +23,7 @@ export default class Device extends React.Component {
     });
   }
 
-  setProperty2 (devId,ndeId,name, value) {
+  setPropertyOD (devId,ndeId,name, value) {
     console.log(`NBM_S2 `);
     this.props.setProperty({
       deviceId: devId,
@@ -57,7 +57,6 @@ export default class Device extends React.Component {
       'label': true
     });
 
-    console.log('NBM_K1_here');
     let tooltipHtml = `
       <b>Nom objet : </b> ${this.props.deviceState.name ? this.props.deviceState.name : 'inconnu'}<br>
       <b>ID objet : </b> ${this.props.deviceId}<br>
@@ -106,7 +105,6 @@ var MyImage = React.createClass({
 					if (this.props.img1 !== 'none') {
 						var filename =  "";
 						if (/[.]/.exec(this.props.img1)) {
-							console.log("Here I am");
 						imageload = (
 						  <img src={`${this.props.img1}`} style={{backgroundColor: this.props.nodeColor || this.props.deviceColor || this.props.groupColor || this.props.color, padding: '20x'}}/>
 					  );
@@ -155,5 +153,4 @@ Device.propTypes = {
     version: React.PropTypes.version
   }).isRequired,
   setProperty: React.PropTypes.func.isRequired,
-  setProperty2: React.PropTypes.func.isRequired
 };

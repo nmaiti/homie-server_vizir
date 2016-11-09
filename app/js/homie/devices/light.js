@@ -10,7 +10,7 @@ export default class Light extends React.Component {
   }
 
   toggle (value) {
-    this.refs['device'].setProperty('on', value);
+    this.refs['device'].setPropertyD('on', value);
   }
 
   render () {

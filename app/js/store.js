@@ -17,6 +17,7 @@ let immutableState = immutable.Map({
   devices: {}, groups: [], loading: true, connection: true, mqttStatus: false
 });
 
+// Redux Reducer 
 function infrastructure (state = immutableState.toJS(), action) {
   switch (action.type) {
     case SET_CONNECTION:
@@ -38,6 +39,7 @@ function infrastructure (state = immutableState.toJS(), action) {
     case SET_PROPERTY:
 	  console.log(`NBM_L1 `);
       socket.emit('setPropertyE', action.property);
+		console.log(`NBM_J2 `);
       return immutableState.toJS();
     case MQTT_STATUS:
       immutableState = immutableState.set('mqttStatus', action.connected);
@@ -88,6 +90,7 @@ socket.on('mqttClientStatus', (connected) => {
 
 export default store;
 
+// Redux Action Creator
 export function setPropertyS (property) {
   return {
     type: SET_PROPERTY,

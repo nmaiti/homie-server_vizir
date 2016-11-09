@@ -11,7 +11,7 @@ export default class Sttnode extends React.Component {
   }
 
   toggle(value)  {
-  	  this.refs['device'].setProperty2('824d4ae0', 'lighta', 'on', value);
+  	  this.refs['device'].setPropertyOD('824d4ae0', 'lighta', 'on', value);
   }
   toggle3()  {
 	  console.log("fsddsfDS");

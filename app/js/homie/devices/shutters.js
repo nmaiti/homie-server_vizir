@@ -14,18 +14,18 @@ export default class Shutters extends React.Component {
       var val = parseInt(this.props.state.current.level)+10;
 	  	val = val <= 100 ? val : val - 10;
        console.log("NBM_N3b_here");
-	  this.refs['device'].setProperty('level', val);
+	  this.refs['device'].setPropertyD('level', val);
   }
 
   half () {
-    this.refs['device'].setProperty('level', 50);
+    this.refs['device'].setPropertyD('level', 50);
   }
 
   close () {
       var val = parseInt(this.props.state.current.level)-10;
 	  	val = val  >= 0 ? val : val+10;
        console.log("NBM_N3b_here");
-	  this.refs['device'].setProperty('level', val);
+	  this.refs['device'].setPropertyD('level', val);
   }
 
   render () {

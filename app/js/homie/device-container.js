@@ -54,7 +54,7 @@ export default class DeviceContainer extends React.Component {
       Object.keys(device.nodes).forEach((nodeId) => {
         const node = device.nodes[nodeId];
         const Node = Nodes[node.type];
-        nodes.push(<Node name={node.name} type={node.type} state={node.state} deviceId={deviceId} deviceColor={device.color} nodeId={nodeId} nodeColor={node.color} groupColor={groupColor} deviceState={device.state} location={device.location} setProperty={this.props.setProperty} key={deviceId + '-' + nodeId} />);
+        nodes.push(<Node name={node.name} type={node.type} state={node.state} deviceId={deviceId} deviceColor={device.color} nodeId={nodeId} nodeColor={node.color} groupColor={groupColor} deviceState={device.state} location={device.location} setProperty={this.props.setProperty}  key={deviceId + '-' + nodeId} />);
       });
     });
 
@@ -70,5 +70,5 @@ DeviceContainer.propTypes = {
   devices: React.PropTypes.object.isRequired,
   devicesShown: React.PropTypes.oneOfType([ React.PropTypes.array, React.PropTypes.string ]).isRequired,
   groups: React.PropTypes.array.isRequired,
-  setProperty: React.PropTypes.func.isRequired
+  setProperty: React.PropTypes.func.isRequired,
 };
