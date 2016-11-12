@@ -59,7 +59,7 @@ export default class DeviceContainer extends React.Component {
     });
 
     return (
-      <div className='ui five column doubling grid'>
+      <div className='ui six column doubling grid'>
         {nodes}
       </div>
     );
