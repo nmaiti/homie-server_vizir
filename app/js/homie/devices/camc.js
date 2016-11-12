@@ -12,9 +12,12 @@ export default class Camc extends React.Component {
   render () {
     return (
    
-      <Device image={"http://192.168.1.100:8080/./?action=stream"} color='#ea6153' ref='device' {...this.props}>
+      <Device image= { typeof this.props.state.current.source === 'undefined' ? "http://192.168.1.100:8080/?action=stream" : this.props.state.current.source } color='#ea6153' ref='device' {...this.props}>
          <br/>
-         <br/>
+		<div className='value'>
+			{ typeof this.props.state.current.source != 'undefined' ? this.props.state.current.source: "http://192.168.1.100:8080/?action=stream" }
+		</div>
+
 	    <div className='ui two buttons'>
           <button className='ui green icon compact button' >
              <i className='chevron plus icon'></i>
@@ -22,9 +25,6 @@ export default class Camc extends React.Component {
           <button className='ui red icon compact button' >
 			<i className='chevron minus icon'></i>
           </button>	 
-
-        </div>
-	  <div className='lebel'> cam display : 
         </div>
       </Device>
     );
@@ -34,7 +34,7 @@ export default class Camc extends React.Component {
 Camc.propTypes = {
   state: React.PropTypes.shape({
     current: React.PropTypes.shape({
-      on: React.PropTypes.bool
+      source: React.PropTypes.String
     })
   })
 };

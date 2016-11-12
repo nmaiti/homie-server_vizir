@@ -32,7 +32,7 @@
     },
     "camc": {
       "properties": {
-        "on": { "type": "boolean", "settable": false }
+        "source": { "type": "string", "settable": true }
       }
     },
 	"sttnode": {
